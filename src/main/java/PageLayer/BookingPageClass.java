@@ -33,7 +33,8 @@ public class BookingPageClass extends BaseClass{
 	@FindBy(xpath="//span[@class='ui-datepicker-next-icon pi pi-chevron-right ng-tns-c58-10']")
 	private WebElement nextbtn;
 
-	@FindBys(@FindBy(xpath="//tbody[@class='ng-tns-c58-10']/descendant::td"))
+	////tbody[@class='ng-tns-c58-10']/descendant::td
+	@FindBys(@FindBy(xpath="//td[@class='ng-tns-c58-10 ng-star-inserted']"))
 	private List<WebElement> allDate;
 
 	@FindBy(xpath="//div[@class='ng-tns-c65-11 ui-dropdown ui-widget ui-state-default ui-corner-all']")
@@ -57,17 +58,20 @@ public class BookingPageClass extends BaseClass{
 		 PageFactory.initElements(getDriver(),this);
 	}
 
-	public void enterFrom(String From)
+	public void enterFrom(String From) throws InterruptedException
 	{
 		WebElementHelper.sendKeys(from, From);
+		Thread.sleep(3000);
 		ActionsHelper.actionsHelper();
 	}
 
 
-	public void enterTo(String To)
+	public void enterTo(String To) throws InterruptedException
 	{
 		WebElementHelper.sendKeys(to, To);	
+		Thread.sleep(3000);
 		ActionsHelper.actionsHelper();
+		
 	}
 
 	public void enterMonthAndYear(String Month, String Year) throws InterruptedException

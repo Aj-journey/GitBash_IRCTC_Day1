@@ -6,5 +6,5 @@ Feature: IRCTC Application Test
     And user should enter valid "MUMBAI CENTRAL - MMCT (MUMBAI)" as to
 
   Scenario: Validate Calender Functionality
-    When user should enter valid "March" as month and "2025" as Year
-    And user shoould enter valid "15" as Date
+    When user should enter valid "January" as month and "2025" as Year
+    And user shoould enter valid "31" as Date
